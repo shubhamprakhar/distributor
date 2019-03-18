@@ -18,7 +18,7 @@ class ExternalConnectionCreateTest extends \TestCase {
 	public function testCreateExternalConnection() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/post-new.php?post_type=dt_ext_connection' );
 
@@ -32,7 +32,7 @@ class ExternalConnectionCreateTest extends \TestCase {
 
 		// Now test limited connection warning
 
-		$I->typeInField( '#dt_username', 'wpsnapshots' );
+		$I->typeInField( '#dt_username', 'admin' );
 
 		$I->typeInField( '#dt_external_connection_url', $this->getWPHomeUrl() . '/two/wp-json' );
 

@@ -17,7 +17,7 @@ class DistributedPost extends \TestCase {
 	public function testDistributedCount() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		self::assertPostFieldContains( 40, 'post_title', 'Test Post' );
 
@@ -48,7 +48,7 @@ class DistributedPost extends \TestCase {
 	public function testDistributedFrom() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$post_info = $this->pushPost( $I, 40, 2 );
 

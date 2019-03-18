@@ -15,7 +15,7 @@ class PushMenuTest extends \TestCase {
 	public function testMenuItemHover() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/post.php?post=40&action=edit' );
 
@@ -34,7 +34,7 @@ class PushMenuTest extends \TestCase {
 	public function testConnectionCrossOutOnPush() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/post.php?post=40&action=edit' );
 
@@ -65,7 +65,7 @@ class PushMenuTest extends \TestCase {
 	public function testSelectConnection() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/post.php?post=40&action=edit' );
 

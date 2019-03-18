@@ -16,7 +16,7 @@ class SettingsTest extends \TestCase {
 	public function testSettingsSave() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/admin.php?page=distributor-settings' );
 
@@ -53,7 +53,7 @@ class SettingsTest extends \TestCase {
 	public function testAuthorBylineSetting() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		// First save the setting as checked
 		$I->moveTo( 'two/wp-admin/admin.php?page=distributor-settings' );
@@ -90,6 +90,6 @@ class SettingsTest extends \TestCase {
 		// Verify byline is normal
 		$I->moveTo( $post_info['distributed_front_url'] );
 
-		$I->seeText( 'wpsnapshots', '.byline .author' );
+		$I->seeText( 'admin', '.byline .author' );
 	}
 }

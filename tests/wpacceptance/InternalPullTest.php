@@ -16,7 +16,7 @@ class InternalPullTest extends \TestCase {
 	public function testPostShowingPerStatus() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'two/wp-admin/admin.php?page=pull' );
 
@@ -45,7 +45,7 @@ class InternalPullTest extends \TestCase {
 	public function testPullPost() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$this->pullPost( $I, 40, 'two', '' );
 
@@ -70,7 +70,7 @@ class InternalPullTest extends \TestCase {
 	public function testSkipPost() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'two/wp-admin/admin.php?page=pull' );
 

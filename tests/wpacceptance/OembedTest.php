@@ -16,7 +16,7 @@ class OembedTests extends \TestCase {
 	public function testOembedNetworkPushedContent() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		// Push post to connection 2.
 		$post_info = $this->pushPost( $I, 48, 2 );
@@ -41,7 +41,7 @@ class OembedTests extends \TestCase {
 	public function testOembedNetworkPulledContent() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$post_info = $this->pullPost( $I, 48, 'two', '' );
 		$I->moveTo( $post_info['distributed_edit_url'] );
@@ -66,13 +66,13 @@ class OembedTests extends \TestCase {
 	public function testOembedExternalPushedContent() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'wp-admin/post-new.php?post_type=dt_ext_connection' );
 
 		$I->typeInField( '#title', 'Test External Connection' );
 
-		$I->typeInField( '#dt_username', 'wpsnapshots' );
+		$I->typeInField( '#dt_username', 'admin' );
 
 		$I->typeInField( '#dt_external_connection_url', $this->getWPHomeUrl() . '/two/wp-json' );
 
@@ -114,13 +114,13 @@ class OembedTests extends \TestCase {
 	public function testOembedExternalPulledContent() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( 'two/wp-admin/post-new.php?post_type=dt_ext_connection' );
 
 		$I->typeInField( '#title', 'Test External Connection' );
 
-		$I->typeInField( '#dt_username', 'wpsnapshots' );
+		$I->typeInField( '#dt_username', 'admin' );
 
 		$I->typeInField( '#dt_external_connection_url', $this->getWPHomeUrl() . '/wp-json' );
 

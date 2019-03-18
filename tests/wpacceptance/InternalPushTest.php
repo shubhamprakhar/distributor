@@ -18,7 +18,7 @@ class InternalPushTest extends \TestCase {
 	public function testPushDraftPost() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$this->pushPost( $I, 40, 2, '', 'draft' );
 
@@ -36,7 +36,7 @@ class InternalPushTest extends \TestCase {
 	public function testPushPublishPost() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$this->pushPost( $I, 40, 2 );
 
@@ -54,7 +54,7 @@ class InternalPushTest extends \TestCase {
 	public function testPushDataSync() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$I->moveTo( '/wp-admin/post.php?post=40&action=edit' );
 

@@ -16,7 +16,7 @@ class LinkUnlinkTest extends \TestCase {
 	public function testUnlinkPublishPost() {
 		$I = $this->openBrowserPage();
 
-		$I->loginAs( 'wpsnapshots' );
+		$I->loginAs( 'admin' );
 
 		$post_info = $this->pushPost( $I, 40, 2 );
 
